@@ -1,0 +1,6 @@
+name: Main
+version: '${project.version}'
+main: com.furs.fphone.Main
+api-version: 1.19
+commands:
+  fphone:
