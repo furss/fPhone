@@ -8,9 +8,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
 public class gPhone implements CommandExecutor {
-    private final Main plugin;
+    private final fphone plugin;
 
-    public gPhone(Main plugin){this.plugin = plugin;}
+    public gPhone(fphone plugin){this.plugin = plugin;}
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {

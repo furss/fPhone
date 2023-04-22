@@ -1,6 +1,6 @@
 package com.furs.fphone.Events;
 
-import com.furs.fphone.Main;
+import com.furs.fphone.fphone;
 import com.furs.fphone.Utils.Manager;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -9,9 +9,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class UsePhone implements Listener {
-    private final Main plugin;
+    private final fphone plugin;
 
-    public UsePhone(Main plugin){this.plugin = plugin;}
+    public UsePhone(fphone plugin){this.plugin = plugin;}
 
     @EventHandler
     @Deprecated

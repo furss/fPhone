@@ -1,6 +1,6 @@
-name: Main
+name: fphone
 version: '${project.version}'
-main: com.furs.fphone.Main
+main: com.furs.fphone.fphone
 api-version: 1.19
 commands:
   fphone:

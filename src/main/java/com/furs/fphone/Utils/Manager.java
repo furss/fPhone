@@ -1,6 +1,6 @@
 package com.furs.fphone.Utils;
 
-import com.furs.fphone.Main;
+import com.furs.fphone.fphone;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -14,15 +14,15 @@ import org.bukkit.persistence.PersistentDataType;
 import java.util.Arrays;
 
 public class Manager{
-    private final Main fPhone;
-    public Manager(Main fPhone){this.fPhone = fPhone;}
-    private static final NamespacedKey phonen = new NamespacedKey(Main.getPlugin(), "Phone");
-    private static final NamespacedKey block = new NamespacedKey(Main.getPlugin(), "blockitem");
+    private final fphone fPhone;
+    public Manager(fphone fPhone){this.fPhone = fPhone;}
+    private static final NamespacedKey phonen = new NamespacedKey(fphone.getPlugin(), "Phone");
+    private static final NamespacedKey block = new NamespacedKey(fphone.getPlugin(), "blockitem");
 
 
 
 
-    public ItemStack phone() {
+    public static ItemStack phone() {
         ItemStack phone = new ItemStack(Material.IRON_INGOT);
         ItemMeta meta = phone.getItemMeta();
         meta.getPersistentDataContainer().set(phonen, PersistentDataType.STRING, "Кек");
@@ -32,12 +32,14 @@ public class Manager{
         return phone;
     }
     public Inventory phoneInter(){
-        Inventory inv = Bukkit.createInventory(null , 54, "fPhone");
+        Inventory inv = Bukkit.createInventory(null , 54, " ");
         for(int i = 0; i < 54; i++) {
             inv.setItem(i, BlockItem());
         }
         inv.setItem(47, createItem(Material.FLOWER_BANNER_PATTERN, "§r§6Сообщения", fPhone.getStr("Strings.messages")));
         inv.setItem(49, createItem(Material.BARRIER, "§r§cЗакрыть", fPhone.getStr("Strings.quit")));
+        inv.setItem(51, createItem(Material.REDSTONE, "§r§6Настройки", "Тест"));
+        inv.setItem(46, createItem(Material.MUSIC_DISC_CAT, "§r§aМузыкальный плеер", "§r§6Любимые треки в одном приложении!:)"));
 
         return inv;
     }
@@ -58,10 +60,11 @@ public class Manager{
         return item;
 
     }
-    public ItemStack PlayerSkull(Player player) {
-        ItemStack item = new ItemStack(Material.SKELETON_SKULL);
-        SkullMeta meta = (SkullMeta) item.getItemMeta();
-        meta.setOwner(String.valueOf(player));
+    public static ItemStack playerSkull(Player players) {
+        ItemStack item = new ItemStack(Material.PLAYER_HEAD, 1);
+        SkullMeta meta = (SkullMeta)item.getItemMeta();
+        meta.setDisplayName(players.getDisplayName());
+        meta.setOwningPlayer(players);
         item.setItemMeta(meta);
         return item;
     }

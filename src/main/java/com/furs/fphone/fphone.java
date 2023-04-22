@@ -5,15 +5,17 @@ import com.furs.fphone.Events.UsePhone;
 import com.furs.fphone.Utils.Manager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.util.Objects;
+import java.util.logging.Logger;
 
-public class Main extends JavaPlugin {
-    private static Main plugin;
-    public static Main getPlugin() {
+public class fphone extends JavaPlugin {
+    private static fphone plugin;
+    public static fphone getPlugin() {
         return plugin;
     }
 
-
+    Logger log = Logger.getLogger("Minecraft");
 
     @Override
     public void onEnable() {
